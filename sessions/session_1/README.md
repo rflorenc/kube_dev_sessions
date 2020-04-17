@@ -17,7 +17,7 @@ sudo tar -C /usr/local -xzf $package && rm -f $package
 ### https://golang.org/doc/install?download=go1.14.2.darwin-amd64.pkg
 ```
 package=go1.14.2.darwin-amd64.pkg
-curl -O https://dl.google.com/go/go1.14.2.darwin-amd64.pkg
+curl -O https://dl.google.com/go/$package
 sudo open $package
 ```
 
