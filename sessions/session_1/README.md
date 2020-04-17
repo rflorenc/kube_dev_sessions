@@ -16,9 +16,9 @@ sudo tar -C /usr/local -xzf $package && rm -f $package
 ## Install golang-14 for darwin-amd64
 ### https://golang.org/doc/install?download=go1.14.2.darwin-amd64.pkg
 ```
-package=go1.14.2.linux-amd64.tar.gz
-curl -O https://dl.google.com/go/$package
-sudo tar -C /usr/local -xzf $package && rm -f $package
+package=go1.14.2.darwin-amd64.pkg
+curl -O https://dl.google.com/go/go1.14.2.darwin-amd64.pkg
+sudo open $package
 ```
 
 ## Set up bash profile
