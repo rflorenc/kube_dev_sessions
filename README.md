@@ -1,3 +1,3 @@
-# kube_dev_sessions
+# kube dev sessions
 
 All sessions to be placed in the corresponding folder.

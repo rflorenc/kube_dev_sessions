@@ -21,11 +21,15 @@ git clone https://github.com/kubernetes/kubernetes ${GOPATH_K8S}
 cd ${GOPATH_K8S}
 mkdir -vp ${GOPATH_K8S}/third_party/etcd
 git remote rename origin upstream
+```
 
-# install etcd
+## install etcd
+```
 ./hack/install-etcd.sh
+```
 
-# start docker
+## start docker
+```
 sudo systemctl enable docker && sudo systemctl start docker
 ```
 
