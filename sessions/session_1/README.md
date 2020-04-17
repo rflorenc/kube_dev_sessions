@@ -1,11 +1,27 @@
-## install golang-14 for linux-amd64
+# Pre Requisites
+
+For Fedora/RHEL7: `yum install docker`
+
+For Mac: https://hub.docker.com/editions/community/docker-ce-desktop-mac/
+
+
+## Install golang-14 for linux-amd64
+### https://golang.org/doc/install?download=go1.14.2.linux-amd64.tar.gz
 ```
 package=go1.14.2.linux-amd64.tar.gz
-curl -O https://dl.google.com/go/${package}
-sudo tar -C /usr/local -xzf ${package} && rm -f ${package}
+curl -O https://dl.google.com/go/$package
+sudo tar -C /usr/local -xzf $package && rm -f $package
 ```
 
-## set up bash profile
+## Install golang-14 for darwin-amd64
+### https://golang.org/doc/install?download=go1.14.2.darwin-amd64.pkg
+```
+package=go1.14.2.linux-amd64.tar.gz
+curl -O https://dl.google.com/go/$package
+sudo tar -C /usr/local -xzf $package && rm -f $package
+```
+
+## Set up bash profile
 ```
 echo 'export PATH=${PATH}:/usr/local/go/bin' >> ~/.bash_profile
 echo 'export GOPATH_K8S=${HOME}/go/src/k8s.io/kubernetes' >> ~/.bash_profile
@@ -14,7 +30,7 @@ echo 'export PATH=${GOPATH_K8S}/third_party/etcd:${PATH}' >> ~/.bash_profile
 source ~/.bash_profile
 ```
 
-## clone kubernetes
+## Clone kubernetes
 ```
 mkdir -p ${GOPATH_K8S}
 git clone https://github.com/kubernetes/kubernetes ${GOPATH_K8S}
@@ -23,12 +39,12 @@ mkdir -vp ${GOPATH_K8S}/third_party/etcd
 git remote rename origin upstream
 ```
 
-## install etcd
+## Install Etcd
 ```
-./hack/install-etcd.sh
+${GOPATH_K8S}/hack/install-etcd.sh
 ```
 
-## start docker
+## Start docker
 ```
 sudo systemctl enable docker && sudo systemctl start docker
 ```
