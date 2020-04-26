@@ -1,8 +1,9 @@
 # Pre Requisites
 
-For Fedora/RHEL7: `yum install docker`
+## Docker CE
+Fedora 32/31/30: https://computingforgeeks.com/how-to-install-docker-on-fedora/ 
 
-For Mac: https://hub.docker.com/editions/community/docker-ce-desktop-mac/
+MacOSX: https://hub.docker.com/editions/community/docker-ce-desktop-mac/
 
 
 ## Install golang-14 for linux-amd64
