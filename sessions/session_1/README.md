@@ -10,6 +10,13 @@ sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
 
 MacOSX: https://hub.docker.com/editions/community/docker-ce-desktop-mac/
 
+## Kubectl
+```
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl 
+
+chmod -v +x ./kubectl 
+sudo mv ./kubectl /usr/local/bin/kubectl 
+```
 
 ## Install golang-14 for linux-amd64
 ### https://golang.org/doc/install?download=go1.14.2.linux-amd64.tar.gz
