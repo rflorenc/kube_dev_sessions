@@ -1,51 +1,43 @@
-# Lets test our golang installation 
+# Lets test our golang installation
 
 ## [Install kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
 
 ```
-cd $HOME 
+cd $HOME
 curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.7.0/kind-$(uname)-amd64"
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 ```
 
-```
-# Install to $(go env GOPATH)/bin
-GO111MODULE="on" go get sigs.k8s.io/kind@v0.7.0
-```
+## Ensure docker is started
 
-## Create basic cluster
-```
-kind create cluster
+### Configure the below before the next step
+https://kind.sigs.k8s.io/docs/user/quick-start/#settings-for-docker-desktop
 
-Creating cluster "kind" ...
- ✓ Ensuring node image (kindest/node:v1.17.0) 🖼
- ✓ Preparing nodes 📦  
- ✓ Writing configuration 📜 
- ✓ Starting control-plane 🕹️ 
- ✓ Installing CNI 🔌 
- ✓ Installing StorageClass 💾 
-Set kubectl context to "kind-kind"
-You can now use your cluster with:
-``` 
-``` 
-kubectl cluster-info --context kind-kind
-
-Kubernetes master is running at https://127.0.0.1:32768
-KubeDNS is running at https://127.0.0.1:32768/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
-
-To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'. 
-```
-
-## Optional - Build kubernetes with kind
+## Build kubernetes with kind
 ```
 kind build node-image
 kind create cluster --image kindest/node:latest
+
+# We have previously cloned kubernetes into ${GOPATH}/src/k8s.io/kubernetes
+# so we can run:
+kind build node-image --image=k8s_dev_local/node:master
+
+# This will create k8s_dev_local/node:master docker image
+# with the currently checked out master branch/commit
 ```
 
+## kind usage examples
+```
+# one node cluster
+kind create cluster
 
-## [Install operator-skd-cli](https://github.com/operator-framework/operator-sdk/blob/master/doc/user/install-operator-sdk.md#install-the-operator-sdk-cli) 
- 
+# 1 control plane, 3 worker nodes
+kind create cluster --config sessions/session_2/kind_configs/1cp_3wrk.yaml
+```
+
+## [Install operator-skd-cli](https://github.com/operator-framework/operator-sdk/blob/master/doc/user/install-operator-sdk.md#install-the-operator-sdk-cli)
+
 ### Test go code generation
 
 ```
@@ -61,6 +53,23 @@ $ operator-sdk add api --api-version=app.example.com/v1alpha1 --kind=AppService
 
 # Add a new controller that watches for AppService
 $ operator-sdk add controller --api-version=app.example.com/v1alpha1 --kind=AppService
+
+# The remaining instructions are optional
 ```
 
-### The remaining instructions are optional
+# Recommended software
+## Gimme golang version manager
+https://github.com/travis-ci/gimme#installation--usage
+
+## Gimme based Docker image for basic golang experiments
+https://github.com/rflorenc/golang-gimme-centos
+
+
+# Alternatives
+## Minikube
+https://kubernetes.io/docs/tasks/tools/install-minikube/
+
+## Install kind in $(go env GOPATH)/bin
+```
+GO111MODULE="on" go get sigs.k8s.io/kind@v0.7.0
+```

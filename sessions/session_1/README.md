@@ -1,10 +1,10 @@
 # Pre Requisites
 
 ## Docker CE
-Fedora 32/31/30: https://computingforgeeks.com/how-to-install-docker-on-fedora/ 
+Fedora 32/31/30: https://computingforgeeks.com/how-to-install-docker-on-fedora/
 
 ```
-# After the instructions above
+# After following the instructions above
 sudo mkdir /sys/fs/cgroup/systemd
 sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
 sudo dnf install -y grubby
@@ -16,10 +16,10 @@ MacOSX: https://hub.docker.com/editions/community/docker-ce-desktop-mac/
 
 ## Kubectl
 ```
-curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl 
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 
-chmod -v +x ./kubectl 
-sudo mv ./kubectl /usr/local/bin/kubectl 
+chmod -v +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
 ## Install golang-14 for linux-amd64
