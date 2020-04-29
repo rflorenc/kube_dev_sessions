@@ -22,6 +22,9 @@ chmod -v +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
+## cfssl and cfssl-json
+https://github.com/cloudflare/cfssl#installation
+
 ## Install golang-14 for linux-amd64
 ### https://golang.org/doc/install?download=go1.14.2.linux-amd64.tar.gz
 ```
