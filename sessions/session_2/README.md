@@ -57,12 +57,15 @@ $ operator-sdk add controller --api-version=app.example.com/v1alpha1 --kind=AppS
 # The remaining instructions are optional
 ```
 
-# Recommended software
+# Recommended extras
 ## Gimme golang version manager
 https://github.com/travis-ci/gimme#installation--usage
 
 ## Gimme based Docker image for basic golang experiments
 https://github.com/rflorenc/golang-gimme-centos
+
+## json incremental digger (jid)
+https://github.com/simeji/jid#simply-use-jid-command
 
 
 # Alternatives
