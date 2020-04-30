@@ -4,8 +4,6 @@ When watching the following video it's recommended to fast forward the build pro
 
 [[Watch the asciicast](https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)]  (https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)
 
-[![Watch the asciicast](media/build_k8s_master_image.gif)](media/build_k8s_master_image.gif)
-
 
 ## [Install kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
 
