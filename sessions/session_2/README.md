@@ -1,7 +1,5 @@
 # Lets test our golang installation
 
-[![Watch asciicast](session_2/media/openshift-intro.gif)](https://asciinema.org/a/49402)
-
 ## [Install kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
 
 ```
@@ -11,7 +9,18 @@ chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 ```
 
-## Ensure docker is started
+## kind usage examples
+```
+# one node cluster
+kind create cluster
+
+# 1 control plane, 1 worker nodes
+kind create cluster --config sessions/session_2/kind_configs/1cp_1worker.yaml
+
+kubectl get pods -A
+
+kind delete cluster
+```
 
 ### Configure the below before the next step
 https://kind.sigs.k8s.io/docs/user/quick-start/#settings-for-docker-desktop
@@ -29,14 +38,6 @@ kind build node-image --image=k8s_dev_local/node:master
 # with the currently checked out master branch/commit
 ```
 
-## kind usage examples
-```
-# one node cluster
-kind create cluster
-
-# 1 control plane, 3 worker nodes
-kind create cluster --config sessions/session_2/kind_configs/1cp_1worker.yaml
-```
 
 ## [Install operator-skd-cli](https://github.com/operator-framework/operator-sdk/blob/master/doc/user/install-operator-sdk.md#install-the-operator-sdk-cli)
 
@@ -55,8 +56,6 @@ $ operator-sdk add api --api-version=app.example.com/v1alpha1 --kind=AppService
 
 # Add a new controller that watches for AppService
 $ operator-sdk add controller --api-version=app.example.com/v1alpha1 --kind=AppService
-
-# The remaining instructions are optional
 ```
 
 # Recommended extras
