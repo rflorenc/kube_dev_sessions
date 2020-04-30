@@ -1,5 +1,7 @@
 # Lets test our golang installation
 
+[[Watch the asciicast](https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)]  (https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)
+
 ## [Install kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
 
 ```
