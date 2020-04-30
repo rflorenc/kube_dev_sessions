@@ -1,5 +1,7 @@
 # Lets test our golang installation
 
+[![Watch asciicast](session_2/media/openshift-intro.gif)](https://asciinema.org/a/49402)
+
 ## [Install kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
 
 ```
@@ -33,7 +35,7 @@ kind build node-image --image=k8s_dev_local/node:master
 kind create cluster
 
 # 1 control plane, 3 worker nodes
-kind create cluster --config sessions/session_2/kind_configs/1cp_3wrk.yaml
+kind create cluster --config sessions/session_2/kind_configs/1cp_1worker.yaml
 ```
 
 ## [Install operator-skd-cli](https://github.com/operator-framework/operator-sdk/blob/master/doc/user/install-operator-sdk.md#install-the-operator-sdk-cli)
