@@ -33,9 +33,6 @@ https://kind.sigs.k8s.io/docs/user/quick-start/#settings-for-docker-desktop
 
 ## Build kubernetes with kind
 ```
-kind build node-image
-kind create cluster --image kindest/node:latest
-
 # We have previously cloned kubernetes into ${GOPATH}/src/k8s.io/kubernetes
 # so we can run:
 kind build node-image --image=k8s_dev_local/node:master
