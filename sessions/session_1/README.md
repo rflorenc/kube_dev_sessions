@@ -32,7 +32,7 @@ https://github.com/cloudflare/cfssl#installation
 
 
 ## Install golang-14 for linux-amd64
-### https://golang.org/doc/install?download=go1.14.2.linux-amd64.tar.gz
+https://golang.org/doc/install?download=go1.14.2.linux-amd64.tar.gz
 ```
 package=go1.14.2.linux-amd64.tar.gz
 curl -O https://dl.google.com/go/$package
@@ -40,7 +40,7 @@ sudo tar -C /usr/local -xzf $package && rm -f $package
 ```
 
 ## Install golang-14 for darwin-amd64
-### https://golang.org/doc/install?download=go1.14.2.darwin-amd64.pkg
+ https://golang.org/doc/install?download=go1.14.2.darwin-amd64.pkg
 ```
 package=go1.14.2.darwin-amd64.pkg
 curl -O https://dl.google.com/go/$package
