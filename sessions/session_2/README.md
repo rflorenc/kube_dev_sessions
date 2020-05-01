@@ -5,7 +5,7 @@ When watching the following video it's recommended to fast forward the build pro
 [[Watch the asciicast](https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)]  (https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)
 
 
-## [Using kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
+[Using kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
 
 ```
 cd $HOME
@@ -14,7 +14,7 @@ chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 ```
 
-## kind usage examples
+kind usage examples
 ```
 # one node cluster
 kind create cluster
@@ -27,10 +27,10 @@ kubectl get pods -A
 kind delete cluster
 ```
 
-### Configure the below before the next step
+Configure the below before the next step
 https://kind.sigs.k8s.io/docs/user/quick-start/#settings-for-docker-desktop
 
-## Build kubernetes with kind
+Build kubernetes with kind
 ```
 kind build node-image
 kind create cluster --image kindest/node:latest
@@ -44,9 +44,9 @@ kind build node-image --image=k8s_dev_local/node:master
 ```
 
 
-## [Install operator-skd-cli](https://github.com/operator-framework/operator-sdk/blob/master/doc/user/install-operator-sdk.md#install-the-operator-sdk-cli)
+[Install operator-skd-cli](https://github.com/operator-framework/operator-sdk/blob/master/doc/user/install-operator-sdk.md#install-the-operator-sdk-cli)
 
-### Test go code generation
+Test go code generation
 
 ```
 # Create an app-operator project that defines the App CR.
@@ -63,18 +63,23 @@ $ operator-sdk add api --api-version=app.example.com/v1alpha1 --kind=AppService
 $ operator-sdk add controller --api-version=app.example.com/v1alpha1 --kind=AppService
 ```
 
-# Recommended extras
-## Gimme golang version manager
+Recommended extras 
+
+Gimme golang version manager 
+
 https://github.com/travis-ci/gimme#installation--usage
 
-## Gimme based Docker image for basic golang experiments
+Gimme based Docker image for basic golang experiments 
+
 https://github.com/rflorenc/golang-gimme-centos
 
-## json incremental digger (jid)
+json incremental digger (jid) 
+
 https://github.com/simeji/jid#simply-use-jid-command
 
 
-# Alternatives
+Alternatives 
+
 [Install Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube)
 
 ```
@@ -84,8 +89,7 @@ sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
 sudo usermod -a -G libvirt $USER
 minikube start --network-plugin=cni --container-runtime=cri-o --driver kvm2
-
-rlourenc@envy:~$ minikube start --network-plugin=cni --container-runtime=cri-o --driver kvm2                                                                                                                         
+                                                                                                                        
 😄  minikube v1.9.2 on Fedora 32                                                                                                                                                                                     
 ✨  Using the kvm2 driver based on user configuration                                                                                                                                                                
 👍  Starting control plane node m01 in cluster minikube                                                                                                                                                              
@@ -103,7 +107,8 @@ rlourenc@envy:~$ minikube start --network-plugin=cni --container-runtime=cri-o -
 ```
 
 
-## Install kind in $(go env GOPATH)/bin
+
+Install kind in $(go env GOPATH)/bin
 ```
 GO111MODULE="on" go get sigs.k8s.io/kind@v0.7.0
 ```
