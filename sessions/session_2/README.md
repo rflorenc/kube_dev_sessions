@@ -5,7 +5,7 @@ When watching the following video it's recommended to fast forward the build pro
 [[Watch the asciicast](https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)]  (https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)
 
 
-## [using kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
+## [Using kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
 
 ```
 cd $HOME
@@ -75,7 +75,7 @@ https://github.com/simeji/jid#simply-use-jid-command
 
 
 # Alternatives
-## Using Minikube https://kubernetes.io/docs/tasks/tools/install-minikube/
+[Install Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube)
 
 ```
 # Minikube, libvirt, and crio on Fedora 30/31/32
@@ -83,7 +83,23 @@ sudo dnf install @virtualization -y
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
 sudo usermod -a -G libvirt $USER
-minikube start --network-plugin=cni --container-runtime=cri-o --vm-driver kvm2
+minikube start --network-plugin=cni --container-runtime=cri-o --driver kvm2
+
+rlourenc@envy:~$ minikube start --network-plugin=cni --container-runtime=cri-o --driver kvm2                                                                                                                         
+😄  minikube v1.9.2 on Fedora 32                                                                                                                                                                                     
+✨  Using the kvm2 driver based on user configuration                                                                                                                                                                
+👍  Starting control plane node m01 in cluster minikube                                                                                                                                                              
+🔥  Creating kvm2 VM (CPUs=2, Memory=2200MB, Disk=20000MB) ...                                                                                                                                                       
+🎁  Preparing Kubernetes v1.18.0 on CRI-O 1.17.1 ...                                                                                                                                                                 
+    > kubelet.sha256: 65 B / 65 B [--------------------------] 100.00% ? p/s 0s                                                                                                                                      
+    > kubeadm.sha256: 65 B / 65 B [--------------------------] 100.00% ? p/s 0s                                                                                                                                      
+    > kubectl.sha256: 65 B / 65 B [--------------------------] 100.00% ? p/s 0s                                                                                                                                      
+    > kubectl: 41.98 MiB / 41.98 MiB [---------------] 100.00% 16.16 MiB p/s 2s
+    > kubeadm: 37.96 MiB / 37.96 MiB [---------------] 100.00% 10.79 MiB p/s 3s
+    > kubelet: 108.01 MiB / 108.01 MiB [------------] 100.00% 10.83 MiB p/s 10s
+🌟  Enabling addons: default-storageclass, storage-provisioner
+🏄  Done! kubectl is now configured to use "minikube"
+
 ```
 
 
