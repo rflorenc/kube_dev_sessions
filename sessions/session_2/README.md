@@ -5,7 +5,7 @@ When watching the following video it's recommended to fast forward the build pro
 [[Watch the asciicast](https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)]  (https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)
 
 
-## [Install kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
+## [using kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
 
 ```
 cd $HOME
@@ -75,8 +75,17 @@ https://github.com/simeji/jid#simply-use-jid-command
 
 
 # Alternatives
-## Minikube
-https://kubernetes.io/docs/tasks/tools/install-minikube/
+## Using Minikube https://kubernetes.io/docs/tasks/tools/install-minikube/
+
+```
+# Minikube, libvirt, and crio on Fedora 30/31/32
+sudo dnf install @virtualization -y
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+sudo usermod -a -G libvirt $USER
+minikube start --network-plugin=cni --container-runtime=cri-o --vm-driver kvm2
+```
+
 
 ## Install kind in $(go env GOPATH)/bin
 ```
