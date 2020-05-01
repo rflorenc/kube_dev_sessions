@@ -1,7 +1,7 @@
 # Pre Requisites
 
 ## Docker CE
-Fedora 32/31/30: https://computingforgeeks.com/how-to-install-docker-on-fedora/
+For Fedora 32/31/30: https://computingforgeeks.com/how-to-install-docker-on-fedora/
 
 ```
 # After following the instructions above
@@ -10,9 +10,13 @@ sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
 sudo dnf install -y grubby
 sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
 sudo reboot
-```
+``` 
+Good background read regarding cgroup v1/v2:
+https://medium.com/nttlabs/cgroup-v2-596d035be4d7
 
-MacOSX: https://hub.docker.com/editions/community/docker-ce-desktop-mac/
+
+For MacOSX: https://hub.docker.com/editions/community/docker-ce-desktop-mac/
+ 
 
 ## Kubectl
 ```
@@ -23,7 +27,9 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
 ## cfssl and cfssl-json
-https://github.com/cloudflare/cfssl#installation
+https://github.com/cloudflare/cfssl#installation 
+
+
 
 ## Install golang-14 for linux-amd64
 ### https://golang.org/doc/install?download=go1.14.2.linux-amd64.tar.gz
