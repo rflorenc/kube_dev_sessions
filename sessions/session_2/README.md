@@ -1,4 +1,4 @@
-# Lets test our golang installation
+## Lets test our golang installation
 
 When watching the following video it's recommended to fast forward the build process.
 
@@ -27,10 +27,11 @@ kubectl get pods -A
 kind delete cluster
 ```
 
-Configure the below before the next step
+Configure the below before the next step 
+
 https://kind.sigs.k8s.io/docs/user/quick-start/#settings-for-docker-desktop
 
-Build kubernetes with kind
+## Build kubernetes with kind
 ```
 kind build node-image
 kind create cluster --image kindest/node:latest
@@ -63,7 +64,7 @@ $ operator-sdk add api --api-version=app.example.com/v1alpha1 --kind=AppService
 $ operator-sdk add controller --api-version=app.example.com/v1alpha1 --kind=AppService
 ```
 
-Recommended extras 
+## Recommended extras 
 
 Gimme golang version manager 
 
@@ -78,7 +79,7 @@ json incremental digger (jid)
 https://github.com/simeji/jid#simply-use-jid-command
 
 
-Alternatives 
+## Alternatives 
 
 [Install Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube)
 
