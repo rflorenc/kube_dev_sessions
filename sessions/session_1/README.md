@@ -80,6 +80,7 @@ sudo systemctl enable docker && sudo systemctl start docker
 
 ```
 cd ${GOPATH_K8S}
+# Obviously you can build any branch
 git checkout v1.12.3
 make quick-release
 ```
@@ -89,7 +90,10 @@ make quick-release
 Start the cluster:
 
 ```
+export KUBERNETES_PROVIDER=local
 ${GOPATH_K8S}/hack/local-up-cluster.sh
+
+# local-up-cluster.sh will also build kube targets
 ```
 
 Verify the cluster is running in another ssh window:
