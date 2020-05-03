@@ -2,7 +2,9 @@
 
 ## For Fedora 32/31/30 
 
-Docker CE: https://computingforgeeks.com/how-to-install-docker-on-fedora/
+Get Docker CE 
+
+https://computingforgeeks.com/how-to-install-docker-on-fedora/
 
 ```
 # After following the instructions above
@@ -20,7 +22,8 @@ sudo systemctl enable docker && sudo systemctl start docker
 ``` 
 
 
-Install golang-14 for linux-amd64
+Install golang-14 for linux-amd64 
+
 https://golang.org/doc/install?download=go1.14.2.linux-amd64.tar.gz
 ```
 package=go1.14.2.linux-amd64.tar.gz
@@ -30,10 +33,13 @@ sudo tar -C /usr/local -xzf $package && rm -f $package
 
 
 ## For MacOSX 
+Get Docker-CE 
+
 https://hub.docker.com/editions/community/docker-ce-desktop-mac/ 
 
 
-Install golang-14 for darwin-amd64
+Install golang-14 for darwin-amd64 
+
 https://golang.org/doc/install?download=go1.14.2.darwin-amd64.pkg
 ```
 package=go1.14.2.darwin-amd64.pkg
@@ -90,11 +96,13 @@ ${GOPATH_K8S}/hack/install-etcd.sh
 > :warning: **If you are using zsh on MacOSX**: Ensure you are using the latest version of bash since the build scripts use `mapfile` which isn't supported by zsh. 
  
 
-
 ```
 cd ${GOPATH_K8S}
-# Obviously you can build any branch
+
+# Obviously you can build any branch. 
+# e.g.: git checkout master
 git checkout v1.12.3
+
 make quick-release
 ```
 
