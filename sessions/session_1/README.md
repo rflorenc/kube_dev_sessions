@@ -41,6 +41,9 @@ curl -O https://dl.google.com/go/$package
 sudo open $package
 ```
 
+Configure the below before continuing  
+https://kind.sigs.k8s.io/docs/user/quick-start/#settings-for-docker-desktop
+
 
 # General setup
 
