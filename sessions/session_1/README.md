@@ -55,7 +55,7 @@ https://kind.sigs.k8s.io/docs/user/quick-start/#settings-for-docker-desktop
 
 You will need to perform the below steps regardless of Linux distribution or MacOSX version. 
 
-## Kubectl
+## Install Kubectl
 ```
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 
@@ -63,7 +63,7 @@ chmod -v +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
-## cfssl and cfssl-json
+## Install cfssl and cfssl-json
 https://github.com/cloudflare/cfssl#installation 
 
 
