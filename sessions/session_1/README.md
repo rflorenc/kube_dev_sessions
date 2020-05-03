@@ -1,7 +1,8 @@
 # Pre Requisites
 
-## Docker CE
-For Fedora 32/31/30: https://computingforgeeks.com/how-to-install-docker-on-fedora/
+## For Fedora 32/31/30 
+
+Docker CE: https://computingforgeeks.com/how-to-install-docker-on-fedora/
 
 ```
 # After following the instructions above
@@ -9,14 +10,43 @@ sudo mkdir /sys/fs/cgroup/systemd
 sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
 sudo dnf install -y grubby
 sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
-sudo reboot
+sudo reboot 
+``` 
+
+```
+# Start docker
+sudo systemctl enable docker && sudo systemctl start docker
+
 ``` 
 Good background read regarding cgroup v1/v2:
-https://medium.com/nttlabs/cgroup-v2-596d035be4d7
+https://medium.com/nttlabs/cgroup-v2-596d035be4d7 
 
 
-For MacOSX: https://hub.docker.com/editions/community/docker-ce-desktop-mac/
- 
+## Install golang-14 for linux-amd64
+https://golang.org/doc/install?download=go1.14.2.linux-amd64.tar.gz
+```
+package=go1.14.2.linux-amd64.tar.gz
+curl -O https://dl.google.com/go/$package
+sudo tar -C /usr/local -xzf $package && rm -f $package
+```
+
+
+## For MacOSX 
+https://hub.docker.com/editions/community/docker-ce-desktop-mac/ 
+
+
+## Install golang-14 for darwin-amd64
+ https://golang.org/doc/install?download=go1.14.2.darwin-amd64.pkg
+```
+package=go1.14.2.darwin-amd64.pkg
+curl -O https://dl.google.com/go/$package
+sudo open $package
+```
+
+
+# General setup
+
+You will need to perform the below steps regardless of Linux distribution or MacOSX version. 
 
 ## Kubectl
 ```
@@ -29,23 +59,6 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 ## cfssl and cfssl-json
 https://github.com/cloudflare/cfssl#installation 
 
-
-
-## Install golang-14 for linux-amd64
-https://golang.org/doc/install?download=go1.14.2.linux-amd64.tar.gz
-```
-package=go1.14.2.linux-amd64.tar.gz
-curl -O https://dl.google.com/go/$package
-sudo tar -C /usr/local -xzf $package && rm -f $package
-```
-
-## Install golang-14 for darwin-amd64
- https://golang.org/doc/install?download=go1.14.2.darwin-amd64.pkg
-```
-package=go1.14.2.darwin-amd64.pkg
-curl -O https://dl.google.com/go/$package
-sudo open $package
-```
 
 ## Set up bash profile
 ```
@@ -70,13 +83,12 @@ git remote rename origin upstream
 ${GOPATH_K8S}/hack/install-etcd.sh
 ```
 
-## Start docker
-```
-sudo systemctl enable docker && sudo systemctl start docker
-```
 
+## Build Kubernetes 
 
-## Build Kubernetes
+> :warning: **If you are using zsh on MacOSX**: Ensure you are using the latest version of bash since the build scripts use `mapfile` which isn't supported by zsh. 
+ 
+
 
 ```
 cd ${GOPATH_K8S}
