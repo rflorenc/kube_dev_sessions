@@ -5,7 +5,7 @@ When watching the following video it's recommended to fast forward the build pro
 [[Watch the asciicast](https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)]  (https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)
 
 
-[Using kind](https://github.com/kubernetes-sigs/kind#installation-and-usage)
+[Install Kind (Kubernetes in Docker)](https://github.com/kubernetes-sigs/kind#installation-and-usage)
 
 ```
 cd $HOME
