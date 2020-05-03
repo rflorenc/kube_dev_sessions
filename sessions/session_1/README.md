@@ -20,7 +20,7 @@ sudo systemctl enable docker && sudo systemctl start docker
 ``` 
 
 
-## Install golang-14 for linux-amd64
+Install golang-14 for linux-amd64
 https://golang.org/doc/install?download=go1.14.2.linux-amd64.tar.gz
 ```
 package=go1.14.2.linux-amd64.tar.gz
@@ -33,8 +33,8 @@ sudo tar -C /usr/local -xzf $package && rm -f $package
 https://hub.docker.com/editions/community/docker-ce-desktop-mac/ 
 
 
-## Install golang-14 for darwin-amd64
- https://golang.org/doc/install?download=go1.14.2.darwin-amd64.pkg
+Install golang-14 for darwin-amd64
+https://golang.org/doc/install?download=go1.14.2.darwin-amd64.pkg
 ```
 package=go1.14.2.darwin-amd64.pkg
 curl -O https://dl.google.com/go/$package
