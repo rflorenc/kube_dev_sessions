@@ -106,7 +106,13 @@ git checkout v1.12.3
 make quick-release
 ```
 
-## Run a Local Kubernetes Cluster
+
+## Note: 
+Running a Local Kubernetes Cluster on MacOSX can only be done in a container environment such as Kind or Docker in Docker. 
+More on session_2.
+
+
+## Run a Local Kubernetes Cluster (Fedora)
 
 Start the cluster:
 
