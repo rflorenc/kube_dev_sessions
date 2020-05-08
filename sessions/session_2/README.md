@@ -34,10 +34,10 @@ https://kind.sigs.k8s.io/docs/user/quick-start/#settings-for-docker-desktop
 ## Build kubernetes with kind
 ```
 # We have previously cloned kubernetes into ${GOPATH}/src/k8s.io/kubernetes
-# so we can run:
+# so we can checkout master and run:
 kind build node-image --image=k8s_dev_local/node:master
 
-# This will create k8s_dev_local/node:master docker image
+# This will build a k8s_dev_local/node:master docker image
 # with the currently checked out master branch/commit
 ```
 
