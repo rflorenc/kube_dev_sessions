@@ -1,9 +1,5 @@
 ## Lets test our golang installation
 
-When watching the following video it's recommended to fast forward the build process.
-
-[[Watch the asciicast](https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)]  (https://asciinema.org/a/dIQqt6ucRjY6HY8sgIXPzfZlA)
-
 
 [Install Kind (Kubernetes in Docker)](https://github.com/kubernetes-sigs/kind#installation-and-usage)
 
