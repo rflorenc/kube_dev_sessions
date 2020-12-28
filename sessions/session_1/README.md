@@ -1,5 +1,13 @@
 # Pre Requisites
 
+## For CentOS 7
+
+```
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker-ce docker-ce-cli containerd.io
+sudo systemctl start docker
+```
+
 ## For Fedora 32/31/30 
 
 Get Docker CE 
@@ -22,11 +30,11 @@ sudo systemctl enable docker && sudo systemctl start docker
 ``` 
 
 
-Install golang-14 for linux-amd64 
+Install golang v1.15.6 linux-amd64 
 
-https://golang.org/doc/install?download=go1.14.2.linux-amd64.tar.gz
+https://golang.org/doc/install?download=go1.15.6.linux-amd64.tar.gz
 ```
-package=go1.14.2.linux-amd64.tar.gz
+package=go1.15.6.linux-amd64.tar.gz
 curl -O https://dl.google.com/go/$package
 sudo tar -C /usr/local -xzf $package && rm -f $package
 ```
@@ -38,11 +46,11 @@ Get Docker-CE
 https://hub.docker.com/editions/community/docker-ce-desktop-mac/ 
 
 
-Install golang-14 for darwin-amd64 
+Install golang 1.15.6 darwin-amd64 
 
-https://golang.org/doc/install?download=go1.14.2.darwin-amd64.pkg
+https://golang.org/doc/install?download=go1.15.6.darwin-amd64.pkg
 ```
-package=go1.14.2.darwin-amd64.pkg
+package=go1.15.6.darwin-amd64.pkg
 curl -O https://dl.google.com/go/$package
 sudo open $package
 ```
@@ -65,7 +73,8 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 
 ## Install cfssl and cfssl-json
 https://github.com/cloudflare/cfssl#installation 
-
+ 
+Ensure $GOPATH/bin/cfssl is in $PATH
 
 ## Set up bash profile
 ```
@@ -100,8 +109,8 @@ ${GOPATH_K8S}/hack/install-etcd.sh
 cd ${GOPATH_K8S}
 
 # Obviously you can build any branch. 
-# e.g.: git checkout master
-git checkout v1.12.3
+# e.g.: git checkout v1.12.3
+git checkout master
 
 make quick-release
 ```
