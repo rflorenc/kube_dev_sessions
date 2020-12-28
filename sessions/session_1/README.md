@@ -103,6 +103,9 @@ git remote rename origin upstream
 ## Install Etcd
 ```
 ${GOPATH_K8S}/hack/install-etcd.sh
+
+# Replace etcd version accordingly
+sudo cp -v ${GOPATH_K8S}/third_party/etcd-v3.X.Y-linux-amd64/{etcd,etcdctl} /usr/local/bin/
 ```
 
 
