@@ -104,14 +104,15 @@ git remote rename origin upstream
 ```
 ${GOPATH_K8S}/hack/install-etcd.sh
 
-# Replace etcd version accordingly
+# Ensure etcd binaries are in your $PATH
+# Replace etcd version accordingly below
 sudo cp -v ${GOPATH_K8S}/third_party/etcd-v3.X.Y-linux-amd64/{etcd,etcdctl} /usr/local/bin/
 ```
 
 
 ## Build Kubernetes 
 
-> :warning: **If you are using zsh on MacOSX**: Ensure you are using the latest version of bash since the build scripts use `mapfile` which isn't supported by zsh. 
+> :warning: **zsh on MacOSX**: Ensure you are using the latest version of bash since the build scripts use `mapfile` which isn't supported by zsh. 
  
 
 ```
