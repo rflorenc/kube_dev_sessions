@@ -77,10 +77,15 @@ chmod -v +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
-## Install cfssl and cfssl-json
+## Install cfssl
 https://github.com/cloudflare/cfssl#installation 
- 
-Ensure $GOPATH/bin/cfssl is in $PATH
+
+```
+go get -u github.com/cloudflare/cfssl/cmd/cfssl
+export PATH=$PATH:/home/rlourenc/go/bin:
+
+`go env GOPATH`/bin/cfssl} should be available in your $PATH
+```
 
 ## Set up bash profile
 ```
