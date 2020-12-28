@@ -126,9 +126,9 @@ make quick-release
 
 
 ## Note: 
-Running a Local Kubernetes Cluster on MacOSX can only be done in a container environment such as Kind or Docker in Docker. 
-More on session_2.
-
+Building and running a Local Kubernetes Cluster from source on MacOS can only be done in a containerized environment such as Kind.
+We will see how to make this process work on MacOS in session 2.
+At the time of writting, the steps below will not work on MacOS. 
 
 ## Run a Local Kubernetes Cluster
 
