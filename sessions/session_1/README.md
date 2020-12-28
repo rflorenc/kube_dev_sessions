@@ -148,7 +148,3 @@ export KUBERNETES_PROVIDER=local
 export KUBECONFIG=/var/run/kubernetes/admin.kubeconfig
 ${GOPATH_K8S}/cluster/kubectl.sh get nodes
 ``` 
-
-
-Good background read regarding cgroup v1 vs v2:
-https://medium.com/nttlabs/cgroup-v2-596d035be4d7 
