@@ -138,6 +138,34 @@ Start the cluster:
 ```
 export KUBERNETES_PROVIDER=local
 ${GOPATH_K8S}/hack/local-up-cluster.sh
+...
+...
+...
+
+Local Kubernetes cluster is running. Press Ctrl-C to shut it down.
+
+Logs:
+  /tmp/kube-apiserver.log
+  /tmp/kube-controller-manager.log
+
+  /tmp/kube-proxy.log
+  /tmp/kube-scheduler.log
+  /tmp/kubelet.log
+
+To start using your cluster, you can open up another terminal/tab and run:
+
+  export KUBECONFIG=/var/run/kubernetes/admin.kubeconfig
+  cluster/kubectl.sh
+
+Alternatively, you can write to the default kubeconfig:
+
+  export KUBERNETES_PROVIDER=local
+
+  cluster/kubectl.sh config set-cluster local --server=https://localhost:6443 --certificate-authority=/var/run/kubernetes/server-ca.crt
+  cluster/kubectl.sh config set-credentials myself --client-key=/var/run/kubernetes/client-admin.key --client-certificate=/var/run/kubernetes/client-admin.crt
+  cluster/kubectl.sh config set-context local --cluster=local --user=myself
+  cluster/kubectl.sh config use-context local
+  cluster/kubectl.sh
 ```
 
 Verify the cluster is running in another ssh window:
@@ -146,4 +174,7 @@ Verify the cluster is running in another ssh window:
 export KUBERNETES_PROVIDER=local
 export KUBECONFIG=/var/run/kubernetes/admin.kubeconfig
 ${GOPATH_K8S}/cluster/kubectl.sh get nodes
+
+NAME        STATUS   ROLES    AGE    VERSION
+127.0.0.1   Ready    <none>   2m3s   v1.21.0-alpha.0.458+0a839c6c3b9489
 ``` 
