@@ -6,6 +6,13 @@
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
+
+# Optional steps
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
+Further info here:
+https://docs.docker.com/engine/install/linux-postinstall/
 ```
 
 ## For Fedora 32/31/30 
@@ -25,8 +32,7 @@ sudo reboot
 
 ```
 # Start docker
-sudo systemctl enable docker && sudo systemctl start docker
-
+sudo systemctl start docker
 ``` 
 
 
