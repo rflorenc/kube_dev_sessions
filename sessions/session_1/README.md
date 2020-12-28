@@ -138,8 +138,6 @@ Start the cluster:
 ```
 export KUBERNETES_PROVIDER=local
 ${GOPATH_K8S}/hack/local-up-cluster.sh
-
-# local-up-cluster.sh will also build kube targets
 ```
 
 Verify the cluster is running in another ssh window:
