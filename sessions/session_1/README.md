@@ -130,7 +130,7 @@ Running a Local Kubernetes Cluster on MacOSX can only be done in a container env
 More on session_2.
 
 
-## Run a Local Kubernetes Cluster (Fedora)
+## Run a Local Kubernetes Cluster
 
 Start the cluster:
 
