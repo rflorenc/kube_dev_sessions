@@ -77,6 +77,10 @@ chmod -v +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
+## Install git
+
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
 ## Install cfssl
 https://github.com/cloudflare/cfssl#installation 
 
