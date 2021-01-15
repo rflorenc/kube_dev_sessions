@@ -9,6 +9,7 @@ https://docs.docker.com/engine/install/
 # Optional steps
 sudo groupadd docker
 sudo usermod -aG docker $USER
+newgrp docker
 
 Further info here:
 https://docs.docker.com/engine/install/linux-postinstall/
