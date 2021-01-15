@@ -29,6 +29,10 @@ https://golang.org/doc/install?download=go1.15.6.linux-amd64.tar.gz
 package=go1.15.6.linux-amd64.tar.gz
 curl -O https://dl.google.com/go/$package
 sudo tar -C /usr/local -xzf $package && rm -f $package
+
+# We will add it to ~/.bashrc or ~/.bash_profile later to make this change permanent
+export PATH=$PATH:/usr/local/go/bin
+
 ```
 
 ## For MacOSX 
@@ -80,12 +84,13 @@ https://github.com/cloudflare/cfssl#installation
 
 ```
 go get -u github.com/cloudflare/cfssl/cmd/cfssl
-export PATH=$PATH:/home/rlourenc/go/bin:
 
-`go env GOPATH`/bin/cfssl} should be available in your $PATH
+`go env GOPATH`/bin/cfssl should now be available
 ```
 
-## Set up bash profile
+## Set up ~/.bash_profile 
+
+The same steps apply to `~/.bashrc`. Substitute accordingly.
 ```
 echo 'export PATH=${PATH}:/usr/local/go/bin' >> ~/.bash_profile
 echo 'export GOPATH_K8S=${HOME}/go/src/k8s.io/kubernetes' >> ~/.bash_profile
@@ -129,7 +134,7 @@ make quick-release
 ```
 
 
-## Note: 
+> :warning: 
 Building and running a Local Kubernetes Cluster from source on MacOS can only be done in a containerized environment such as Kind.
 We will see how to make this process work on MacOS in session 2.
 At the time of writting, the steps below will not work on MacOS. 
