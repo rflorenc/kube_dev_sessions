@@ -4,7 +4,7 @@
 
 ```
 # Install Docker
-https://docs.docker.com/get-docker/
+https://docs.docker.com/engine/install/
 
 # Optional steps
 sudo groupadd docker
