@@ -1,5 +1,6 @@
 # Pre Requisites
 
+
 ## <Your preferred Linux distro here>
 
 ```
@@ -15,28 +16,13 @@ Further info here:
 https://docs.docker.com/engine/install/linux-postinstall/
 ```
 
-## For Fedora 32/31/30 
-
-Get Docker CE 
-
-https://computingforgeeks.com/how-to-install-docker-on-fedora/
-
-```
-# After following the instructions above
-sudo mkdir /sys/fs/cgroup/systemd
-sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
-sudo dnf install -y grubby
-sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
-sudo reboot 
-``` 
-
 ```
 # Start docker
 sudo systemctl start docker
 ``` 
 
 
-Install golang v1.15.6 linux-amd64 
+## Install golang v1.15.6 linux-amd64 
 
 https://golang.org/doc/install?download=go1.15.6.linux-amd64.tar.gz
 ```
@@ -44,7 +30,6 @@ package=go1.15.6.linux-amd64.tar.gz
 curl -O https://dl.google.com/go/$package
 sudo tar -C /usr/local -xzf $package && rm -f $package
 ```
-
 
 ## For MacOSX 
 Get Docker-CE 
@@ -64,6 +49,7 @@ sudo open $package
 Configure the below before continuing  
 https://kind.sigs.k8s.io/docs/user/quick-start/#settings-for-docker-desktop
 
+---
 
 # General setup
 
@@ -77,9 +63,17 @@ chmod -v +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
-## Install git
+## Install git and gcc
 
+The best is to do it via a package group such as the Development Tools or build-essential
+
+```
+sudo yum groupinstall 'Development Tools'
+sudo apt install build-essential
+```
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+https://gcc.gnu.org/install/
+
 
 ## Install cfssl
 https://github.com/cloudflare/cfssl#installation 
