@@ -21,6 +21,9 @@ kind create cluster --config sessions/session_2/kind_configs/1cp_1worker.yaml
 kubectl get pods -A
 
 kind delete cluster
+
+# prepend sudo and re-run in case you run into file permission issues
+
 ```
 
 Configure the below before the next step 
