@@ -1,11 +1,10 @@
 # Pre Requisites
 
-## For CentOS 7
+## <Your preferred Linux distro here>
 
 ```
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install docker-ce docker-ce-cli containerd.io
-sudo systemctl start docker
+# Install Docker
+https://docs.docker.com/get-docker/
 
 # Optional steps
 sudo groupadd docker
