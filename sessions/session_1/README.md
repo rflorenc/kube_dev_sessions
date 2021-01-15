@@ -1,4 +1,4 @@
-# Pre Requisites
+# Prerequisites
 
 
 ## <Your preferred Linux distro here>
