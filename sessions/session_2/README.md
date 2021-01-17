@@ -107,5 +107,5 @@ minikube start --network-plugin=cni --container-runtime=cri-o --driver kvm2
 
 Install kind in $(go env GOPATH)/bin
 ```
-GO111MODULE="on" go get sigs.k8s.io/kind@v0.7.0
+GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
 ```
